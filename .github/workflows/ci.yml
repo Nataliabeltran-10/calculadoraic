@@ -28,18 +28,18 @@ desploy:
  needs: test
  runs-on: ubuntu-latest
 
-steps:
- - name: Clonar el repositorio
-   uses: actions/checkout@v3
+ steps:
+  - name: Clonar el repositorio
+    uses: actions/checkout@v3
  
- - name: Crear la carpeta de despliegue
-   run: |
-    mkdir public 
-    cp index.html public/
-    cp calculadora.js public/
+  - name: Crear la carpeta de despliegue
+    run: |
+     mkdir public 
+     cp index.html public/
+     cp calculadora.js public/
 
- - name: Desplegar en GitHub Pages
-   uses: JamesIves/github-pages-desploy-action@v4
-   with:
-    branch: gh-pages
-    folder: public 
+  - name: Desplegar en GitHub Pages
+    uses: JamesIves/github-pages-desploy-action@v4
+    with:
+     branch: gh-pages
+     folder: public 
